@@ -23,8 +23,8 @@ This is a Flask-based API for classifying brain tumor images using a Convolution
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/azeem30/brain-tumor-detection.git
-   cd brain-tumor-detection
+   git clone https://github.com/azeem30/Brain-Tumor-Detection.git
+   cd Brain-Tumor-Detection
 
 2. **Activate Virtual Environment:**
 
