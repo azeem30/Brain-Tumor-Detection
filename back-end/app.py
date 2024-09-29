@@ -9,9 +9,9 @@ from PIL import Image
 
 app = Flask(__name__)
 CORS(app)
-model_path = "D:\\Brain Tumor Detection\\models\\brain_tumor_model.h5"
+model_path = "D:\\Brain Tumor Detection\\back-end\\models\\brain_tumor_model.h5"
 model = load_model(model_path)
-upload_folder = "D:\\Brain Tumor Detection\\dataset\\uploads"
+upload_folder = "D:\\Brain Tumor Detection\\back-end\\dataset\\uploads"
 app.config['UPLOAD_FOLDER'] = upload_folder
 
 IMAGE_SIZE = (128, 128)
