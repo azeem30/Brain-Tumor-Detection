@@ -11,9 +11,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 app = Flask(__name__)
 CORS(app)
-model_path = ".\\models\\brain_tumor_model.h5"
+model_path = "./models/brain_tumor_model.h5"
 model = load_model(model_path)
-upload_folder = ".\\dataset\\uploads"
+upload_folder = "./dataset/uploads"
 app.config['UPLOAD_FOLDER'] = upload_folder
 
 IMAGE_SIZE = (128, 128)
