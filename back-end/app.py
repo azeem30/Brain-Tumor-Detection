@@ -27,6 +27,10 @@ def preprocess_image(image_path):
     image = np.expand_dims(image, axis=0)
     return image
 
+@app.route('/')
+def home():
+    return jsonify({"message": "The server is running!"}), 200
+
 @app.route('/classify', methods=['POST'])
 def classify_image():
     if 'file' not in request.files:
