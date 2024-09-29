@@ -7,11 +7,13 @@ import os
 from werkzeug.utils import secure_filename
 from PIL import Image
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 app = Flask(__name__)
 CORS(app)
-model_path = "D:\\Brain Tumor Detection\\back-end\\models\\brain_tumor_model.h5"
+model_path = ".\\models\\brain_tumor_model.h5"
 model = load_model(model_path)
-upload_folder = "D:\\Brain Tumor Detection\\back-end\\dataset\\uploads"
+upload_folder = ".\\dataset\\uploads"
 app.config['UPLOAD_FOLDER'] = upload_folder
 
 IMAGE_SIZE = (128, 128)
@@ -48,4 +50,5 @@ def classify_image():
     return jsonify({'Error': 'Invalid file upload'}), 400
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
