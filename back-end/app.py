@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 from PIL import Image
 
 app = Flask(__name__)
-CORS(app, resources={"/classify": {"origins": "https://azeem30.github.io/CerebroCheck-Frontend/"}})
+CORS(app, resources={"/classify": {"origins": "https://azeem30.github.io/"}})
 
 
 logging.basicConfig(level=logging.INFO)
