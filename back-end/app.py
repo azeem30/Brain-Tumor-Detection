@@ -68,8 +68,6 @@ def classify_image():
         class_names = ['No Tumor', 'Tumor']
         result = class_names[predicted_class]
         confidence = float(np.max(prediction))
-        os.remove(file_path)
-
         return jsonify({'result': result, 'confidence': confidence}), 200
     except Exception as e:
         logging.error(f"Error during classification: {e}")
